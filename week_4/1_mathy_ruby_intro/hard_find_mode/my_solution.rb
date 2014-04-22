@@ -34,9 +34,24 @@
 			#return all keys which tie	
 
 
-
 # 2. Initial Solution
+def mode(array)
+	frequency = Hash.new
 
+	for i in array
+		frequency[i] = array.count(i)
+	end
+
+	most_frequent_key = frequency.values.max
+	mode_list = []
+
+	for key, value in frequency
+		if value == most_frequent_key
+			mode_list.push(key)
+		end
+	end
+	return mode_list
+end
 
 
 
