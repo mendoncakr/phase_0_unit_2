@@ -47,7 +47,7 @@ def mode(array)
 
 	for key, value in frequency
 		if value == most_frequent_key
-			mode_list.push(key)
+			mode_list << key
 		end
 	end
 	return mode_list
