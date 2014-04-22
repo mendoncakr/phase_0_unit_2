@@ -4,7 +4,7 @@
 # include it in this file. Also make sure everything that isn't code
 # is commented in the file.  
 
-# I worked on this challenge [by myself, with: ].
+# I worked on this challenge by myself.
 
 # 1. Pseudocode
 
@@ -54,9 +54,45 @@ def mode(array)
 end
 
 
-
 # 3. Refactored Solution
+
+def mode(array)
+	frequency = Hash.new
+	array.each do |i|
+		frequency[i] = array.count(i)
+	end
+
+	most_frequent_key = frequency.values.max
+	mode_list = []
+
+	frequency.each do |key, value|
+		if value == most_frequent_key
+			mode_list.push(key)
+		end
+	end
+	return mode_list
+end
 
 
 
 # 4. Reflection 
+# I thought this was a great, but quite difficult challenge to get back into ruby. The challenge really helped me get a better grasp of ruby hashes and iterating through them.
+# After having taken a Python class in college, I notice that tend to default to for loops, dictionaries, and other various yet similar methods/data types. It's been kinda 
+# hard transitionnig out of it. When I went to refactor my code, I researched a little more into ruby docs how I could clean it up and I think I did the pretty well cleaning it up,
+# however, I'm sure it could be cleaned up even more.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
