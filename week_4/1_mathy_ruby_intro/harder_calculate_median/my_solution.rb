@@ -15,7 +15,19 @@
 
 # 2. Initial Solution
 
-
+def median (array)
+	sorted_array = array.sort()
+	lengthHalf = sorted_array.length / 2
+	roundDown = lengthHalf.floor
+	#condition for odd list length
+	if (array.length % 2) != 0
+		return array[roundDown]
+	else
+		sum = array[roundDown] + array[roundDown-1]
+		average = (sum.to_f / 2.0)
+		return average
+	end
+end
 
 
 # 3. Refactored Solution
