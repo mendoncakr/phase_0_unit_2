@@ -7,7 +7,7 @@
 # try to get everyone into an accountability group of 4, but it's your decision 
 # how to deal with cohorts not easily divisible by four.
 
-# I worked on this challenge [by myself, with: ].
+# I worked on this challenge by myself.
 
 # 2. Pseudocode
 
