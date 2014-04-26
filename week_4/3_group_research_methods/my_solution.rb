@@ -4,19 +4,38 @@ i_want_pets = ["I", "want", 3, "pets", "but", "I", "only", "have", 2]
 my_family_pets_ages = {"Evi" => 6, "Hoobie" => 3, "George" => 12, "Bogart" => 4, "Poly" => 4, 
             "Annabelle" => 0, "Ditto" => 3}
 
-# Person 1's solution
 def my_array_finding_method(source, thing_to_find)
-  # Your code here!
+  #array with wanted items found
+  wanted_items = []
+  #convert array elements to strings
+  new_source = source.map! {|item| item.to_s}
+  #iterate through array and find items which include thing_to_find
+  new_source.each do |item|
+    if (item.include?(thing_to_find) ==  true)
+      wanted_items << item #if found, push to array
+    end
+  end
+  return wanted_items
 end
 
 def my_hash_finding_method(source, thing_to_find)
-  # Your code here!
+  wanted_value = []
+  source.each do |key, value|
+    if (value == thing_to_find)
+      wanted_value << key
+    end
+  end
+  return wanted_value
 end
 
+
 # Identify and describe the ruby method you implemented. 
-# 
-#
-#
+# For the array finding method I used the #include?() method. This method returns true or false if the given object
+# is included in the array. Since this only returns a boolean, I iterated through the list and pushed the element to an empty
+# list if it was included in the initial array.
+
+# For the hash finding method, I used a very similar approach, I iterated through the array and if the value
+# of the key matched the item I was looking for, then only did i push the 'thing_to_find' into my lists
 
 # Person 2
 def my_array_modification_method(source, thing_to_modify)
