@@ -15,10 +15,10 @@ def north_korean_cipher(coded_message)
   input = coded_message.downcase.split("") # Check out this method in IRB to see how it works! Also refer to the ruby docs.
   decoded_sentence = []
   cipher = {"e" => "a",   # This is technically a shift of four letters...Can you think of a way to automate this? Is a hash
-            "f" => "b",   # the best data structure for this problem? What are the pros and cons of hashes?
-            "g" => "c",   
-            "h" => "d", 
-            "i" => "e", 
+            "f" => "b",   # the best data structure for this problem? What are the pros and cons of hashes
+            "g" => "c",   # Another decoding could be done would be to use an array and return the element 4 indices prior to the coded element
+            "h" => "d",   # i.e. ["a", "b", "c","d",....."z"]
+            "i" => "e",     # if the coded letter was b in index 1
             "j" => "f",
             "k" => "g",
             "l" => "h",
@@ -68,8 +68,7 @@ end
 
 
 # Your Refactored Solution
-# Removed lines 56-59 as it's redundant. It searched for the digit and then returned the same digit, 
-# so we decided to delete it as it didn't affect the code
+# Removed lines 56-59 as it's redundant. It searched for the digit and then returned the same digit and didnt affect code
 # We considered using an array, instead of hash, but due to time constraint we decided not to try it.
 # We suggested using 2 arrays. One for the alphabet and one for the coded letters. When the coded letters are found it 
 # would search the regular alphabet 4 indices previous and return the value.
