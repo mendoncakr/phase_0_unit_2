@@ -5,12 +5,9 @@ my_family_pets_ages = {"Evi" => 6, "Hoobie" => 3, "George" => 12, "Bogart" => 4,
             "Annabelle" => 0, "Ditto" => 3}
 
 def my_array_finding_method(source, thing_to_find)
-  #array with wanted items found
-  wanted_items = []
-  #convert array elements to strings
-  new_source = source.map! {|item| item.to_s}
-  #iterate through array and find items which include thing_to_find
-  new_source.each do |item|
+  wanted_items = [] #empty array for found items
+  new_source = source.map! {|item| item.to_s} #convert array elements to strings
+  new_source.each do |item| #iterate through array and find items which include thing_to_find
     if (item.include?(thing_to_find) ==  true)
       wanted_items << item #if found, push to array
     end
@@ -19,10 +16,10 @@ def my_array_finding_method(source, thing_to_find)
 end
 
 def my_hash_finding_method(source, thing_to_find)
-  wanted_value = []
-  source.each do |key, value|
-    if (value == thing_to_find)
-      wanted_value << key
+  wanted_value = [] # empty array for found values
+  source.each do |key, value| #iterate through key,value of hash
+    if (value == thing_to_find) 
+      wanted_value << key #push if found
     end
   end
   return wanted_value
