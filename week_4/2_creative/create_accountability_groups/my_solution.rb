@@ -1,12 +1,5 @@
 # U2.W4: Create Accountability Groups
 
-
-# In this challenge, you are going to make a method that takes an array of names 
-# (You'll want to get the list from your Cohort page in Socrates) and 
-# outputs a list of accountability groups for three different units. You should 
-# try to get everyone into an accountability group of 4, but it's your decision 
-# how to deal with cohorts not easily divisible by four.
-
 # I worked on this challenge by myself.
 
 # 2. Pseudocode
@@ -33,34 +26,36 @@
 
 # 3. Initial Solution
 list = [
-	"Kenneth",
-	"Damien",
-	"Sammy",
-	"Noni",
-	"Tryana",
-	"Jeff",
-	"Natalie",
-	"Katie",
-	"Carina",
-	"Amy",
-	"David",
-	"Solomon",
-	"Abel",
-	"Kim",
-	"Andrew",
-	"Karim",
-	"Bronx",
-	"Remy",
-	"Stella",
-	"Ryan",
-	"Banana",
-	"ANOTHER"
+	"Kenneth Mendonca",
+	"Yariv Kirschner",
+	"Jake Wayne",
+	"Christian Moon",
+	"Adian Soghoian",
+	"Armen Vartan",
+	"Drew Teter",
+	"RJ Arena",
+	"Gabe Garrett",
+	"Antonio Perez",
+	"Ben Brostoff",
+	"Ian Shuff",
+	"Side Patel",
+	"Adam Hardy",
+	"Lexie Ernst",
+	"Stella Kim",
+	"Brendan Susens-Jackson",
+	"Vivek George",
+	"Gregory Piccolo",
+	"Katie Reiner",
+	"Timoor Kurdi",
+	"Daniel Kim",
+	"Nick Giovacchini",
+	"Matthieu Gavaudan"
 ]
 
 def group_creator(name_list)
 
 	accountability_groups = []
-	randomized_names = name_list.shuffle!
+	randomized_names = name_list.shuffle #Used non-destructive shuffle so that I can call on list again for unit 2/3
 
 	while (randomized_names.length > 4)
 		accountability_groups << randomized_names.pop(4)
@@ -72,37 +67,64 @@ def group_creator(name_list)
 		accountability_groups[counter] << randomized_names.pop
 		counter	+= 1
 	end
-
+	
 	counter = 0
 	until accountability_groups[counter] == nil
-		puts accountability_groups[counter].to_s
-		counter += 1
+		puts "Group " + (counter + 1).to_s + ":" ; puts accountability_groups[counter]
+		puts
+		counter += 1 
 	end
 end
 
 
+puts "----------Unit 1----------"
 print group_creator(list)
+puts "----------Unit 2----------"
+print group_creator(list)
+puts "----------Unit 3----------"
+print group_creator(list)
+
 # 4. Refactored Solution
-# I found that I kept refactoring my code on the go as I went along. Changing A LOT of everything quite often. Some things I could still change are:
+# I found that I kept refactoring my code on the go as I went along. Changing A LOT of everything quite often. 
+# Some things I could still change are:
 # 1. Having the program write out "Group-X: person1, person2, person3, person4, (person5?)"
 # 2. Shortening variable names
 # 3. Adding values to name
+# Deleted the break at line 69 as its redundant 
 
+def group_creator(name_list)
 
+	accountability_groups = []
+	randomized_names = name_list.shuffle #Used non-destructive shuffle so that I can call on list again for unit 2/3
 
+	while (randomized_names.length > 4)
+		accountability_groups << randomized_names.pop(4)	
+	end
 
+	counter = 0
+	until (randomized_names.length == 0)
+		accountability_groups[counter] << randomized_names.pop
+		counter	+= 1
+	end
+		
+	counter = 0
+	until accountability_groups[counter] == nil
+		puts "Group " + (counter + 1).to_s + ":" ; puts accountability_groups[counter]
+		puts
+		counter += 1 
+	end
+end
 
 
 
 
 # 1. DRIVER TESTS GO BELOW THIS LINE
-
-
-
-
+# I couldn't think of any driver tests to write as the outputs are random every time
+# However, I did include a few RSPEC tests in the 'group_spec.rb' file
 
 
 # 5. Reflection 
+
 # Completing this challenge was extremely satisfying. I spent nearly 4 hours trying to figure it out. I feel like I learned A LOT about
 # while and until loops and definitely got a firm understanding of them. Some problems I encountered were deciding how to deal with the remaining names after the maximum
 # amount of 4 person groups were created and pretty much mut the overall approach of the problem. After messing around quite a bit in IRB, i decided to go one route. Then after
@@ -115,6 +137,5 @@ print group_creator(list)
 # popped into my head was to use a hash. After creating the initial group, I would assign some unique value to the members. Then when making the second unit lists,
 # create a way to not group people together with the same unique value.
 
-# Hopefully, that made sense. 
 
 
