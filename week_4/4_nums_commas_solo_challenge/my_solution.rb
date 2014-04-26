@@ -24,7 +24,7 @@
 	# if 1, add comma from 2 index until (length # of zeroes) - three 
 	# if 2, add comma from 3 index until (length # of zeroes) - three 
 # join array
-# return number with commas!
+# return number with commas
 
 
 # 2. Initial Solution
@@ -81,7 +81,7 @@ def separate_comma(integer)
 	zero_count = (split_number.length - 1)
 
 	if integer.between?(0, 999)
-		return integer
+		return integer.to_s
 	end
 
 	while zero_count > 0
@@ -115,13 +115,14 @@ def separate_comma(integer)
 	end		
 	extra_comma = split_number.pop() #code is adding an extra comma, so I popped it into a variable and ignored it
 	number_with_commas = split_number.join()
-	return number_with_commas
 end
 
+p separate_comma(1) == "1"
+p separate_comma(1000) == "1,000"
+p separate_comma(10000) == "10,000"
+p separate_comma(100000000000) == "100,000,000,000"
 
-puts separate_comma(67333)
-puts separate_comma(100)
-puts separate_comma(120000000)
+
 
 # 4. Reflection
 # Looking back on the 2.5 hours I spent on this, I found that writing things out really helped me put the code into perspective. 
