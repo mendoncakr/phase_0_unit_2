@@ -32,17 +32,27 @@
 # 2. Initial Solution
 class Array
 	def pad(spaces, filler = nil)
-		arrayCopy = []
+		arrayCopy = Array.new
 		self.each do |element| arrayCopy << element end
 		arrayLength = self.length
 		newSpaces = spaces - arrayLength
 		if spaces <= arrayLength 
-			return self
+			return arrayCopy
 		else
 			newSpaces.times { arrayCopy << filler }
 			return arrayCopy
 		end
 	end
+
+
+
+
+
+
+
+
+
+
 
 	def pad!(spaces, filler = nil)
 		arrayLength = self.length
@@ -64,13 +74,23 @@ p arr1.pad(3) == arr1
 p arr1.pad(5) == [1,2,3,nil,nil]
 p arr1.pad(5, "apple") == [1,2,3,"apple","apple"]
 p arr1.length == 3
-
+p "non-destructive method should NOT return same object id"
+p arr1.object_id
+p arr1.pad(0).object_id
 #tests for destructive method
 p arr2.pad(0) ==  arr2
 p arr2.pad(4) == [1,2,3,nil]
 p arr2.pad(5) ==  [1,2,3,nil, nil]
 p arr2.pad!(7, "apple") == [1, 2, 3, "apple", "apple", "apple", "apple"]
 p arr2.length == 7
+p "-----------------------"
+p "destructive method should return same object id"
+p arr2.object_id
+p arr2.pad!(10).object_id
+
+
+
+
 
 # 3. Refactored Solution
 
