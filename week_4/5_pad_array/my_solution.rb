@@ -21,18 +21,17 @@
 
 # 2. Initial Solution
 class Array
-
-	def pad!(spaces, filler = nil)
+	def pad(spaces, filler = nil)
 		arrayCopy = []
+		self.each do |element| arrayCopy << element end
 		arrayLength = self.length
 		newSpaces = spaces - arrayLength
 		if spaces <= arrayLength 
 			return self
 		else
-			newSpaces.times { self << filler }
-			return self
+			newSpaces.times { arrayCopy << filler }
+			return arrayCopy
 		end
-		puts self
 	end
 
 
@@ -45,11 +44,24 @@ class Array
 			newSpaces.times { self << filler }
 			return self
 		end
-		puts self
 	end
 end
 
+arr1 = [1,2,3]
+arr2 = [1,2,3]
+#tests for non-destructive method
+p arr1.pad(0) == arr1
+p arr1.pad(3) == arr1
+p arr1.pad(5) == [1,2,3,nil,nil]
+p arr1.pad(5, "apple") == [1,2,3,"apple","apple"]
+p arr1.length == 3
 
+#tests for destructive method
+p arr2.pad(0) ==  arr2
+p arr2.pad(4) == [1,2,3,nil]
+p arr2.pad(5) ==  [1,2,3,nil, nil]
+p arr2.pad!(7, "apple") == [1, 2, 3, "apple", "apple", "apple", "apple"]
+p arr2.length == 7
 
 # 3. Refactored Solution
 
