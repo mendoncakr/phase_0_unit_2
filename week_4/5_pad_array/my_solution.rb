@@ -44,16 +44,6 @@ class Array
 		end
 	end
 
-
-
-
-
-
-
-
-
-
-
 	def pad!(spaces, filler = nil)
 		arrayLength = self.length
 		newSpaces = spaces - arrayLength
