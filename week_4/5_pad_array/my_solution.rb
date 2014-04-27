@@ -4,7 +4,7 @@
 # include it in this file. Also make sure everything that isn't code
 # is commented in the file.  
 
-# I worked on this challenge [by myself, with: ].
+# I worked on this challenge by myself
 
 # 1. Pseudocode
 
@@ -16,7 +16,17 @@
 # What are the steps needed to solve the problem?
 # modify class Array
 # define new method (pad)
-	# 
+	#  create empty array for copy
+	# add each element of self to arraycopy
+	# calculate array length
+	# calculate # of spaces to be added
+	# if new spaces is less than or equal to array length
+		# return original array
+	# else 
+		# add number of new spaces and push new element to array copy
+
+# for pad! do the same exact thing, except modify self, rather than have a copy of array
+# 		
 
 
 # 2. Initial Solution
@@ -33,7 +43,6 @@ class Array
 			return arrayCopy
 		end
 	end
-
 
 	def pad!(spaces, filler = nil)
 		arrayLength = self.length
@@ -68,3 +77,10 @@ p arr2.length == 7
 
 
 # 4. Reflection 
+# I thought this was a great challenge that slightly introduced the concept of classes.
+# Had I not started to begin a well grounded rubyist, it probabyl would have taken me longer
+# to determine how to modify a classes methods. I was pretty confident with my ability approaching this
+# challenge and only had to do minimal internet research. # I find that I work a lot in IRB as I code
+# and it seems to help produce cleaner code, hence why I dont have much in the refactor solution area.
+
+
