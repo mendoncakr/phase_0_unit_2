@@ -87,6 +87,8 @@ p north_korean_cipher("ger^wsqifshc*nywx^kix^qi&10000*fekw@sj$gssp%vergl@hsvmxsw
 
 # Reflection
 # I felt 10x more productive working with Armen on this. We really helped each other out. We both helped each other fill in the gaps of our knowledge.
-# Some issues I had trouble understanding were the purposes of the "IF NOT FOUND_MATCh"
+# Some issues I had trouble understanding were the purposes of the "IF NOT FOUND_MATCH" condition on line 57. I had intended to go to office hours
+# and figure it out, but missed my opportunity. At first glance, this challenge was a little intimidating because of the sheet amount of code. Although, Armen
+# and I did a great job working together to decipher the cipher.
 # 
 
