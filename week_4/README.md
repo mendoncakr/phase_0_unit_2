@@ -13,7 +13,11 @@ This week you get a bit more choice on which challenges to do. If you want to go
 ## Challenges
 1. [Mathy Challenges](1_mathy_ruby_intro) **Select 2 of the challenges**
 <<<<<<< HEAD
+<<<<<<< HEAD
 2. [Homework Cheater](2_creative) **Select 1 of the challenges**
+=======
+2. [Creative Challenges](2_creative) **Select 1 of the challenges**
+>>>>>>> upstream/master
 =======
 2. [Creative Challenges](2_creative) **Select 1 of the challenges**
 >>>>>>> upstream/master
