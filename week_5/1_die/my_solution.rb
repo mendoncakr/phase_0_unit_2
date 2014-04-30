@@ -1,7 +1,7 @@
 # U2.W5: Die Class 1: Numeric
 
 
-# I worked on this challenge [by myself, with: ].
+# I worked on this challenge by myself.
 
 # 2. Pseudocode
 
