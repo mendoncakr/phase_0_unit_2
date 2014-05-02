@@ -27,7 +27,7 @@ class Die
   end
   
   def roll
-   	rand(1..sides)
+   	rand(1..@sides)
   end
 end
 
