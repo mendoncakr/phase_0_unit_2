@@ -54,21 +54,31 @@ class VirusPredictor
       print "#{@state} will lose #{deaths} people in this outbreak"
   end
 
-  def speed_of_spread(population_density, state) #in months
+  # def speed_of_spread(population_density, state) #in months
+  #   speed = 0.0
+
+  #   if @population_density >= 200
+  #     speed += 0.5
+  #   elsif @population_density >= 150
+  #     speed += 1
+  #   elsif @population_density >= 100
+  #     speed += 1.5
+  #   elsif @population_density >= 50
+  #     speed += 2
+  #   else 
+  #     speed += 2.5
+  #   end
+
+  #   puts " and will spread across the state in #{speed} months.\n\n"
+  # end
+
+    def speed_of_spread(population_density, state) #in months
     speed = 0.0
-
-    if @population_density >= 200
-      speed += 0.5
-    elsif @population_density >= 150
-      speed += 1
-    elsif @population_density >= 100
-      speed += 1.5
-    elsif @population_density >= 50
-      speed += 2
-    else 
-      speed += 2.5
-    end
-
+    speed += 0.5 if @population_density >= 200
+    speed += 1   if @population_density >= 150
+    speed += 1.5 if @population_density >= 100
+    speed += 2   if @population_density >= 50
+    speed += 2.5 if @population_density <  50
     puts " and will spread across the state in #{speed} months.\n\n"
   end
 
