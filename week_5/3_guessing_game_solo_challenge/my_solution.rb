@@ -56,17 +56,10 @@ class GuessingGame
   end
 
   def guess(guess)
-    @guess = guess
-    if @guess < @answer
-      @solved = false
-      :low
-    elsif @guess > @answer
-      @solved = false
-      :high
-    else @guess == @answer
-      @solved = true
-      :correct   
-    end
+    guess == @answer ? @solved = true : @solved = false
+    return :low if guess < @answer
+    return :high if guess > @answer
+    return :correct if guess == @answer
   end
 
   def solved?
