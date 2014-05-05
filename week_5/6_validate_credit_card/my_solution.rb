@@ -68,11 +68,8 @@ class CreditCard
 	end
 
 	def check_card
-		card_sum = 0
 		@cc_num.each_index { |index| @cc_num[index] *= 2 if index.even? }
-		@digits_to_sum = @cc_num.join("").split("") #join all numbers to remove double digits, then split so each can be added individually
-		@digits_to_sum.each { |int| card_sum += int.to_i}
-		card_sum % 10 == 0 ? true : false #if card sum is a multiple of then, card is valid, 
+		(@cc_num.join("").split("").map! {|digit| digit.to_i}.reduce(:+) % 10) == 0 ? true : false 
 	end
 
 end
@@ -88,3 +85,9 @@ p card.check_card == false
 # I enjoyed this challenge as it gave me a good grasp of classes and class methods. The toughest part for me was determining how to sum the digits within the array
 # that held the the digits which had been doubled. I wasn't sure how to approach the digits that were greater than 9 as they had to split and then added individually.
 # I notice that I'm starting to learn quicker when I force myself to test things out in IRB, instead of thinking it out in my head.
+
+# A while after submitting my initial refactor, I decided to browse other peoples code and found that people managed to refactor to just two lines!
+# I decided to use some of their techniques and really really refactor my code. Along the way, I learned a few methods that I wouldn't have known
+# such as .reduce. On the other hand, I also managed to relearn and reuse the #map! method. Sometimes, I tend to forget about methods, but looking through other peoples
+# code has helped me reuse and relearn what i know.
+
