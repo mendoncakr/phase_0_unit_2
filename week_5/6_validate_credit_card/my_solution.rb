@@ -70,23 +70,13 @@ class CreditCard
 
 	def check_card
 		@card_number = @card_number.split("") #split every number
-		@double_every_other = []
-		@card_sum = 0
+		double_every_other = []
+		card_sum = 0
 		@card_number.each_index { |index| 
-			if index % 2 == 0
-				@double_every_other << (@card_number[index].to_i * 2).to_s 
-			else
-				@double_every_other << @card_number[index]
-			end}			
-
-		@digits_to_sum = @double_every_other.join("").split("") #join all numbers to remove double digits, then split so each can be added individually
-		@digits_to_sum.each { |int| @card_sum += int.to_i}
-
-		if @card_sum % 10 == 0
-			@card_validity = true
-		else
-			@card_validity = false
-		end
+		(index % 2 == 0) ? double_every_other << (@card_number[index].to_i * 2).to_s : double_every_other << @card_number[index]}
+		@digits_to_sum = double_every_other.join("").split("") #join all numbers to remove double digits, then split so each can be added individually
+		@digits_to_sum.each { |int| card_sum += int.to_i}
+		card_sum % 10 == 0 ? true : false #if card sum is a multiple of then, card is valid, 
 	end
 
 end
@@ -95,7 +85,7 @@ end
 
 card = CreditCard.new(4568960122001999)
 p card.check_card == false
-card = CreditCard.new(49462747)
+card = CreditCard.new(4943424322262747)
 p card.check_card == true
 
 # 5. Reflection 
