@@ -64,16 +64,15 @@ class CreditCard
 
 	def initialize(card_number)
 		raise ArgumentError.new("Credit card should be 16 digits only") unless (card_number.to_s.length == 16)
-		@card_number = card_number.to_s
+		@card_number = card_number.to_s.split("").map! {|digit| digit.to_i}
 		@card_validity = false
 	end
 
 	def check_card
-		@card_number = @card_number.split("") #split every number
 		double_every_other = []
 		card_sum = 0
 		@card_number.each_index { |index| 
-		(index % 2 == 0) ? double_every_other << (@card_number[index].to_i * 2).to_s : double_every_other << @card_number[index]}
+		(index % 2 == 0) ? double_every_other << (@card_number[index] * 2).to_s : double_every_other << @card_number[index]}
 		@digits_to_sum = double_every_other.join("").split("") #join all numbers to remove double digits, then split so each can be added individually
 		@digits_to_sum.each { |int| card_sum += int.to_i}
 		card_sum % 10 == 0 ? true : false #if card sum is a multiple of then, card is valid, 
@@ -83,10 +82,10 @@ end
 
 # 1. DRIVER TESTS GO BELOW THIS LINE
 
-card = CreditCard.new(4568960122001999)
-p card.check_card == false
-card = CreditCard.new(4943424322262747)
+card = CreditCard.new(4217661349462747)
 p card.check_card == true
+card = CreditCard.new(1234567887654321)
+p card.check_card == false
 
 # 5. Reflection 
 # I enjoyed this challenge as it gave me a good grasp of classes and class methods. The toughest part for me was determining how to sum the digits within the array
