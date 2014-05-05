@@ -64,16 +64,13 @@ class CreditCard
 
 	def initialize(card_number)
 		raise ArgumentError.new("Credit card should be 16 digits only") unless (card_number.to_s.length == 16)
-		@card_number = card_number.to_s.split("").map! {|digit| digit.to_i}
-		@card_validity = false
+		@cc_num = card_number.to_s.split("").map! {|digit| digit.to_i}
 	end
 
 	def check_card
-		double_every_other = []
 		card_sum = 0
-		@card_number.each_index { |index| 
-		(index % 2 == 0) ? double_every_other << (@card_number[index] * 2).to_s : double_every_other << @card_number[index]}
-		@digits_to_sum = double_every_other.join("").split("") #join all numbers to remove double digits, then split so each can be added individually
+		@cc_num.each_index { |index| @cc_num[index] *= 2 if index.even? }
+		@digits_to_sum = @cc_num.join("").split("") #join all numbers to remove double digits, then split so each can be added individually
 		@digits_to_sum.each { |int| card_sum += int.to_i}
 		card_sum % 10 == 0 ? true : false #if card sum is a multiple of then, card is valid, 
 	end
