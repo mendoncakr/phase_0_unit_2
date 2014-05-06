@@ -39,4 +39,4 @@ sends staged and committed files to master branch
 - Commit locally
 
 ## Release 5: Reflection
-I've actually been using git from the get-go. I thought it would've been more advantageous to me in the long run if I got into the hang of git via the terminal. The toughest command that I had trouble with was #reset. It still takes me a while to wrap my head around it, but I found this website (http://git-scm.com/blog/2011/07/11/reset.html) to be extremly helpful in diagramming out the process. I'm not 100% clear on how it functions, but im sure with time and practice, it will clear up.
+I've actually been using git from the get-go. I thought it would've been more advantageous to me in the long run if I got into the hang of sooner rather than later. The toughest command that I had trouble with was #reset. It still takes me a while to wrap my head around it, but I found this website (http://git-scm.com/blog/2011/07/11/reset.html) to be extremly helpful in diagramming out the process. I'm not 100% clear on how it functions, but im sure with time and practice, it will clear up.
