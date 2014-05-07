@@ -47,12 +47,14 @@ class Array
 	def pad!(spaces, filler = nil)
 		arrayLength = self.length
 		newSpaces = spaces - arrayLength
-		if spaces <= arrayLength 
-			return self
-		else
-			newSpaces.times { self << filler }
-			return self
-		end
+		# if spaces <= arrayLength 
+		# 	return self
+		# else
+		# 	newSpaces.times { self << filler }
+		# 	return self
+		# end
+
+		spaces <= arrayLength ? self : newSpaces.times { self << filler }; return self
 	end
 end
 
@@ -84,6 +86,21 @@ p arr2.pad!(10).object_id
 
 # 3. Refactored Solution
 
+class Array
+	def pad(spaces, filler = nil)
+		arrayCopy = Array.new
+		self.each do |element| arrayCopy << element end
+		arrayLength = self.length
+		newSpaces = spaces - arrayLength
+		spaces <= arrayLength ? arrayCopy : newSpaces.times { arrayCopy << filler}; arrayCopy
+	end
+
+	def pad!(spaces, filler = nil)
+		arrayLength = self.length
+		newSpaces = spaces - arrayLength
+		spaces <= arrayLength ? self : newSpaces.times { self << filler }; self
+	end
+end
 
 
 # 4. Reflection 
