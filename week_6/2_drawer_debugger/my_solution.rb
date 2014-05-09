@@ -8,55 +8,60 @@
 
 class Drawer
 
-attr_reader :contents
+	attr_reader :contents
 
-# Are there any more methods needed in this class?
+	# Are there any more methods needed in this class?
 
-def initialize
-@contents = []
-@open = true
-end
+	def initialize
+	@contents = []
+	@open = true
+	end
 
-def open
-@open = true
-end
+	def open
+	@open = true
+	end
 
-def close
-@open = false
-end 
+	def close
+	@open = false
+	end 
 
-def add_item
-@contents << item
-end
+	def add_item(item)
+	@contents << item
+	end
 
-def remove_item(item = @contents.pop) #what is `#pop` doing?
-@contents.delete(item)
-end
+	def remove_item(item = @contents.pop) #what is `#pop` doing?
+	@contents.delete(item)
+	end
 
-def dump  # what should this method return?
-puts "Your drawer is empty."
-end
+	def dump  # what should this method return?
+	puts "Your drawer is empty."
+	end
 
-def view_contents
-puts "The drawer contains:"
-@contents.each {|silverware| puts "- " + silverware.type }
+	def view_contents
+	puts "The drawer contains:"
+	@contents.each {|silverware| puts "- " + silverware.type }
+	end
 end
 
 
 class Silverware
-attr_reader :type
 
-# Are there any more methods needed in this class?
+	attr_reader :type
 
-def initialize(type, clean = true)
-@type = type
-@clean = clean
-end
+	# Are there any more methods needed in this class?
 
-def eat
-puts "eating with the #{type}"
-@clean = false
-end
+	def initialize(type, clean = true)
+	@type = type
+	@clean = clean
+	end
+
+	def eat
+	puts "eating with the #{type}"
+	@clean = false
+	end
+
+	def clean_silverware
+	end
 
 end
 
