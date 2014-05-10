@@ -1,15 +1,62 @@
 # U2.W6: Create a Playlist from Driver Code
 
 
-# I worked on this challenge [by myself, with: ].
+# I worked on this challenge by myself.
 
 
 # Pseudocode
-
-
+# create two classes, song and playlist
+# define the variables/methods for each class
+# verify tests pass
 
 # Initial Solution
+class Playlist
 
+	def initialize(*song)
+		@list = []
+		@song = song
+		@song.each { |song| @list << song}
+		#p @list.length
+	end
+
+	def add(*song)
+		@song_to_add = song
+		@song_to_add.each { |song| @list << song}
+		#p @list.length 
+	end
+
+	def remove(song)
+		@song_to_remove = song
+		@list.delete_if { |to_delete| @song_to_remove == to_delete }
+	end
+
+	def num_of_tracks
+		@list.length
+	end
+
+	def includes?(song)
+		@list.include?(song)
+	end
+
+	def play_all
+		p "Playing All Songs in Playlist"
+	end
+
+end
+
+
+class Song
+	attr_reader :title, :artist
+
+	def initialize (title, artist)
+		@title = title
+		@artist = artist
+	end
+
+	def play
+		p "Now Playing: #{@title} by #{@artist}"
+	end
+end
 
 
 
@@ -36,10 +83,7 @@ going_under.play
 my_playlist.remove(angels)
 p my_playlist.includes?(lying_from_you) == true
 my_playlist.play_all
-my_playlist.display
-
-
-
-
+#my_playlist.display
 
 # Reflection 
+#I thought this was a fairly simple way to get us working with multiple classes. 

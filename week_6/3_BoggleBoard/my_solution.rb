@@ -48,9 +48,11 @@ p boggle_board.get_col(2) == ["a", "d", "l", "k"]
 p boggle_board.create_word([1,2],[1,1],[2,1],[3,2]) == "dock"
 p dice_grid.object_id != boggle_board.object_id
 print "\n"
+
 for letter in 0...4
 	p boggle_board.get_row(letter).join
 end
+
 print "\n"
 for letter in 0...4
 	p boggle_board.get_col(letter).join
