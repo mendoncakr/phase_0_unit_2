@@ -52,7 +52,6 @@ class CreditCard
 	end
 
 	def check_card
-		
 		digit_array = @card_number.map { |digit| digit.to_i }
 		digit_array.each_index { |index| digit_array[index] *= 2 if index.even?}
 		encoded_string = digit_array.map { |digit| digit.to_s }.join("")
@@ -79,5 +78,6 @@ assert {
 
 assert { CreditCard.instance_method(:initialize).arity == 1 }
 
-
 # Reflection 
+# I enjoyed this one a lot because it helped me reinforce my knowledge of some methods and even helped me learn a new one.
+# 
