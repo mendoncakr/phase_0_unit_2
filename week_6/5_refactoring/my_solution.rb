@@ -55,7 +55,6 @@ class CreditCard
 		
 		digit_array = @card_number.map { |digit| digit.to_i }
 		digit_array.each_index { |index| digit_array[index] *= 2 if index.even?}
-
 		encoded_string = digit_array.map { |digit| digit.to_s }.join("")
 		# now separate the string by digits again
 		reencoded_digit_array = encoded_string.split("").map { |digit| digit.to_i }
@@ -63,10 +62,6 @@ class CreditCard
 		total % 10 == 0 ? true : false
 	end
 end
-
-
-
-
 
 
 # DRIVER TESTS GO BELOW THIS LINE
@@ -83,8 +78,6 @@ assert {
 	card2.check_card == false }
 
 assert { CreditCard.instance_method(:initialize).arity == 1 }
-
-
 
 
 # Reflection 
