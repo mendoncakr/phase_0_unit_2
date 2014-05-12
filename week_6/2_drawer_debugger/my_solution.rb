@@ -113,7 +113,6 @@ silverware_drawer.view_contents #What should this return? This should return an 
 #BONUS SECTION
 
 
-
 # DRIVER TESTS GO BELOW THIS LINE
 def assert
   raise "Assertion failed!" unless yield
@@ -123,3 +122,5 @@ assert { knife1.class == Silverware }
 assert { silverware_drawer.open == true}
 
 # 5. Reflection 
+# I really enjoy debugging programs (so far). It's fun to tinker around with the code and see if you cna finally
+# get something to work. I felt as if I got an alright grasp of classes through this exercise.
