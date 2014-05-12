@@ -86,4 +86,4 @@ my_playlist.play_all
 #my_playlist.display
 
 # Reflection 
-#I thought this was a fairly simple way to get us working with multiple classes. 
+#I thought this was a fairly simple way to get us working and interacting with multiple classes. 

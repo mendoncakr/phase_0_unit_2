@@ -79,5 +79,8 @@ assert {
 assert { CreditCard.instance_method(:initialize).arity == 1 }
 
 # Reflection 
-# I enjoyed this one a lot because it helped me reinforce my knowledge of some methods and even helped me learn a new one.
+# I enjoyed this one a lot because it helped me reinforce my knowledge of some methods and even helped me learn a couple new ones.
+# Even though we had completed the challenge last week on our own, it was honestly kinda tough at first to refactor because it felt as if 
+# this persons solution looked completely different than mine. I did, however, peek at my previous solution to clean things up a bit.
+# I didn't get refactor it as much as I did to my own because I didn't want to change ALOT of his content.
 # 
