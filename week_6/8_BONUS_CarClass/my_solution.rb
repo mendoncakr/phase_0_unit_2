@@ -70,7 +70,7 @@ bmw.drive(.25, 25)
 
 
 
-
-
-
 # 5. Reflection 
+# We clearly didn' finish the bonus due to time constraints but I think we did a decent amount of work. I'm really starting to speed
+# and notice that i actually seem to be learning more when i work with somebody. It helps to talk about things out loud,
+# and get instant feedback/criticism.
